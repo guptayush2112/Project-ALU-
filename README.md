@@ -37,7 +37,7 @@ Now, before we can actually write the RTL code for our ALU, it is important to f
   Fig 1: Reference Logic Diagram
 </p>
 <p>
-Figure above represents the logic diagram used as reference when desiginng our RTL code.
+Figure above represents the logic diagram used as reference when designing our RTL code.
 Here, we can see that X and Y are the two 8-bit input registers going into the ALU while OP is our output register. Along with that, the ALU also has the very important six control bits viz. zx, nx, zy, ny, f, no. These 6 control bits are the ones which decide which operation will the ALU perform. The ALU also has two single bit staus flags labelled above as zr and ng.
 
 The ALU can perform 18 different logical, arithmetic and relational operations depending upon what the values of the control bits are. The truth table for this along with the block diagram of the ALU are given below.
@@ -109,6 +109,8 @@ For Structural Design, kindly refer to: <a href='https://github.com/guptayush211
 ## Testbench Simulation:
 
 After completing the coding and writing the testbench as well, the ALU testbench for Structural model was now simulated using the Xilinx ISim as shown in the two images below.
+
+For the Testbench Design, X and Y were taken initially as 0000100010 and 00001010 
 </p>
 
 <p align="center">
@@ -121,11 +123,11 @@ After completing the coding and writing the testbench as well, the ALU testbench
   Fig. 3 (b): Testbench of 8-bit ALU [Contd till 900ns]
 </p>
 
-Note: Since the port declarations inside the ALU entity of both Structural and Behavioral model are same and the testbench stimuli given to both is same meaning that the testbench of behavioral modelling style is similar to that of the structural modelling, hence the testbench simulation of only one, that is, the structural model is shown.
+Note: Since the port declarations inside the ALU entity of both Structural and Behavioral model are same and the testbench stimuli given to both is same meaning that the testbench of behavioral modelling style is similar to that of the structural modelling, hence the testbench simulation of only one, that is, the structural model is shown here.
 
 # Synthesis and Analysis
 
-Initially, after the function implementation of the design was verified using through the testbench simulation, the design was then synthesized to get the RTL and Technology view of the same.
+Initially, after the function implementation of the design was verified through the testbench simulation, the design was then synthesized to get the RTL and Technology view of the same.
 
 ## Top-Level Block:
 
@@ -141,7 +143,7 @@ Initially, after the function implementation of the design was verified using th
 
 ## Detailed Technology View:  
 <p align="center">
-  <img src="Synthesis/Imgs/Detailed_Techview.jpg"></br>
+  <img src="Synthesis/Imgs/Detailed_TechView.jpg"></br>
 </p>
 
 # Synthesis Report:
