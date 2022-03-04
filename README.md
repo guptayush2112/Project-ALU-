@@ -9,7 +9,7 @@ This repository showcases the RTL [Register Transfer Level] coding of an 8-bit A
  * [Tools Used](#Tools-Used)
  * [RTL Coding and Simulation](#RTL-Coding-and-Simulation)
  * [Synthesis and Analysis](#Synthesis-and-Analysis)
- * [Observations & Conclusion](#Observations-&-Conclusion)
+ * [Conclusion](#Conclusion)
  * [Author](#Author)
  * [Acknowledgements](#Acknowledgements)
  * [References](#References)
@@ -213,7 +213,7 @@ Initially, after the function implementation of the design was verified through 
 	Auto BRAM Packing                  : NO
 	Slice Utilization Ratio Delta      : 5
 
-## Design Report
+## Design Summary:
 
 	=========================================================================
 	*                            Design Summary                             *
@@ -239,7 +239,6 @@ Initially, after the function implementation of the design was verified through 
 
 	Selected Device : 7a100tcsg324-3 
 
-
 	Slice Logic Utilization: 
 	 Number of Slice LUTs:                   34  out of  63400     0%  
 	    Number used as Logic:                34  out of  63400     0%  
@@ -256,13 +255,11 @@ Initially, after the function implementation of the design was verified through 
 	 Number of bonded IOBs:                  32  out of    210    15%  
 
 	Specific Feature Utilization:
-
+	
 	---------------------------
 	Partition Resource Summary:
 	---------------------------
-
 	  No Partitions were found in this design.
-
 	---------------------------
 	=========================================================================
 	
@@ -274,5 +271,5 @@ Thus, the design and analysis of the 8-bit Arithmetic and Logical Unit was succe
 • Ayush Gupta, B.Tech(ECE), SRM Institute of Science and Technology, Kattankulattur, Chennai-603203.
 
 # References:
-[1] Arithmetic Logic Units/Function Generators Datasheet, Texas Instruments, Dallas, Texas, 1988. [Online]. Available: http://www-s.ti.com/sc/ds/sn54s181.pdf
+[1] Arithmetic Logic Units/Function Generators Datasheet, Texas Instruments, Dallas, Texas, 1988. [Online]. Available: http://www-s.ti.com/sc/ds/sn54s181.pdf</br>
 [2] Build a Modern Computer from First Principles: From Nand to Tetris (Project-Centered Course) by Hebrew University of Jerusalem
