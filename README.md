@@ -1,6 +1,6 @@
 # RTL Design and Analysis of an 8-bit ALU using Xilinx ISE Design Suite
 
-This repository showcases the RTL [Register Transfer Level] coding of an 8-bit Arithmetic and Logical Unit as well as its Synthesis and Analysis done using the Xilinx ISE Design Suite 14.7 and ISim.
+This repository showcases the RTL [Register Transfer Level] coding of an 8-bit Arithmetic Logic Unit as well as its Synthesis and Analysis done using the Xilinx ISE Design Suite 14.7 and ISim.
 
 # Table of Contents
  * [Introduction](#Introduction)
@@ -18,7 +18,7 @@ This repository showcases the RTL [Register Transfer Level] coding of an 8-bit A
 # Introduction
 
 We all use devices capable of performing millions and billions of computations in the blink of an eye all throughout our daily lives, don't we? But, have we wondered how is this computation taking place? What helps them in performing these tasks in such a short amount of time? This is where the CPU [Central Processing Unit] comes into the picture. The heart of any computing system is its CPU and the heart of any CPU is the ALU!! 
-The arithmetic and logical unit which lies at the centre of any processing unit is the epicentre of all the operations the CPU performs to get our tasks done. It is the fundamental building block responsible for all sorts of arithmetic, logical or relational operations. 
+The Arithmetic Logic Unit which lies at the centre of any processing unit is the epicentre of all the operations the CPU performs to get our tasks done. It is the fundamental building block responsible for all sorts of arithmetic, logical or relational operations. 
 
 Modern CPUs contain very powerful and complex which are constantly working and performing basic arithmetic and logic operations involving addition, subtraction, multiplication, and division; comparisons of values i.e. relatinoal operations and also the logical operations such as NOT, AND, and OR In addition to ALUs, modern CPUs contain a control unit (CU) as well whose job is to let the ALU know what operation to perform.
 All information is stored and manipulated in the form of binary, of course, and transistor switches are used to manipulate binary numbers since there are only two possible states of a switch: open or closed. An open transistor, through which there is no current, represents a 0. A closed transistor, through which there is a current, represents a 1 and all the required operations are then performed by these multiple transistors connected with each other. 
@@ -148,7 +148,7 @@ Initially, after the function implementation of the design was verified through 
 
 # Synthesis Report:
 
-## Synthesis Summary
+## Synthesis Summary:
 
 	=========================================================================
 	*                      Synthesis Options Summary                        *
@@ -265,7 +265,7 @@ Initially, after the function implementation of the design was verified through 
 	
 	
 # Conclusion:
-Thus, the design and analysis of the 8-bit Arithmetic and Logical Unit was successfully done and it was observed that the ALU was performing all the 18 different operations as required.</br>
+Thus, the design and analysis of the 8-bit Arithmetic Logic Unit was successfully done and it was observed that the ALU was performing all the 18 different operations as required.</br>
 
 # Author:
 • Ayush Gupta, B.Tech(ECE), SRM Institute of Science and Technology, Kattankulattur, Chennai-603203.
