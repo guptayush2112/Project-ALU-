@@ -102,9 +102,9 @@ Logisim is an educational tool for designing and simulating digital logic circui
 
 The VHDL codes of the 8-bit ALU were designed using behavioral as well as structural modelling. The truth table shown in Fig 2 above was used as reference for the behavioral model and the logic diagram shown in Fig 1 was used as reference for structural model.
 
-For Behavioral Design, kindly refer to: <a href='https://github.com/guptayush2112/Project-ALU-/tree/main/Verilog%20Source%20Codes/Behavioral%20Modelling'>Behavioral Model</a></br>
+For Behavioral Design, kindly refer to: <a href='https://github.com/guptayush2112/Project-ALU-/tree/main/VHDL%20Source%20Codes/Behavioral%20Modelling'>Behavioral Model</a></br>
 
-For Structural Design, kindly refer to: <a href='https://github.com/guptayush2112/Project-ALU-/tree/main/Verilog%20Source%20Codes/Structural%20Modelling'>Structural Model</a></br>
+For Structural Design, kindly refer to: <a href='https://github.com/guptayush2112/Project-ALU-/tree/main/VHDL%20Source%20Codes/Structural%20Modelling'>Structural Model</a></br>
 
 ## Testbench Simulation:
 
