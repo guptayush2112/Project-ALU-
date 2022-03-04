@@ -89,11 +89,6 @@ In order to check if the output is negative or not the most significant bit is u
 ISE® Design Suite is a proven and mature development environment for All Programmable devices. It is an impressive package that has got tools for boosting the designer productivity plus additionally, it supplies the flexible configurations of this Design Suite Editions.  
 To know more, kindly refer to: <a href='https://www.xilinx.com/products/design-tools/ise-design-suite.html'>Xilinx ISE Design Suite</a></br>
 
-<p align="center">
-  <img src="Simulations/custom_compiler_img.jpg"></br>
-</p>
-<p>
-
 <b>• ISim Simulator:</b></br>
 ISim provides a complete, full-featured HDL simulator integrated within ISE. HDL simulation now can be an even more fundamental step within your design flow with the tight integration of the ISim within your design environment.
 To know more, kindly refer to: <a href='https://www.xilinx.com/products/design-tools/isim.html'>Xilinx ISim</a></br>
@@ -117,13 +112,13 @@ After completing the coding and writing the testbench as well, the ALU testbench
 </p>
 
 <p align="center">
-  <img src="Xilinx Simulation/Testbench Simulation/tb350.jpg"></br>
-  Fig. 4 (a): Testbench of 8-bit ALU [Till 350ns]
+  <img src="Testbench Simulation/tb350.jpg"></br>
+  Fig. 3 (a): Testbench of 8-bit ALU [Till 350ns]
 </p>
 
 <p align="center">
-  <img src="Xilinx Simulation/Testbench Simulation/tb300.jpg"></br>
-  Fig. 4 (b): Testbench of 8-bit ALU [Contd till 900ns]
+  <img src="Testbench Simulation/tb900.jpg"></br>
+  Fig. 3 (b): Testbench of 8-bit ALU [Contd till 900ns]
 </p>
 
 Note: Since the port declarations inside the ALU entity of both Structural and Behavioral model are same and the testbench stimuli given to both is same meaning that the testbench of behavioral modelling style is similar to that of the structural modelling, hence the testbench simulation of only one, that is, the structural model is shown.
