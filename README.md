@@ -1,6 +1,6 @@
 # RTL Design and Analysis of an 8-bit ALU using Xilinx ISE Design Suite
 
-This repository showcases the RTL [Register Transfer Level] coding of an Arithmetic and Logical Unit as well as its Synthesis and Power Analysis performed on the Xilinx ISE Design Suite 14.7 and also its circuit simulation using Logisim.
+This repository showcases the RTL [Register Transfer Level] coding of an 8-bit Arithmetic and Logical Unit as well as its Synthesis and Analysis done using the Xilinx ISE Design Suite 14.7 and ISim.
 
 # Table of Contents
  * [Introduction](#Introduction)
