@@ -4,13 +4,11 @@ This repository showcases the RTL [Register Transfer Level] coding of an Arithme
 
 # Table of Contents
  * [Introduction](#Introduction)
- * [Literature Survey on Dynamic Memory](#Literature-Survey-on-Dynamic-Memory)
- * [DRAM Cell Design](#DRAM-Cell-Design)
- * [Working Principle](#Working-Principle)
- * [Reference Schematic and Waveform](#Reference-Schematic-and-Waveform)
+ * [Approach](#Approach)
+ * [Design Methodology and Explanation](#Design-Methodology-and-Explanation)
  * [Tools Used](#Tools-Used)
- * [Schematic Design and Simulation](#Schematic-Design-and-Simulation)
- * [SPICE Netlist](#SPICE-Netlist)
+ * [RTL Coding and Simulation](#RTL-Coding-and-Simulation)
+ * [Synthesis and Analysis](#Synthesis-and-Analysis)
  * [Observations & Conclusion](#Observations-&-Conclusion)
  * [Author](#Author)
  * [Acknowledgements](#Acknowledgements)
@@ -151,70 +149,129 @@ Initially, after the function implementation of the design was verified using th
   <img src="Synthesis/Imgs/Detailed_Techview.jpg"></br>
 </p>
 
-## Synthesis Report:
+# Synthesis Report:
 
-Herewith is the Netlist generated for the above design:
+## Synthesis Summary
 
-	*  Generated for: PrimeSim
-	*  Design library name: lib1
-	*  Design cell name: 3T1D_DRAM_tb
-	*  Design view name: schematic
-	.lib 'saed32nm.lib' TT
+	=========================================================================
+	*                      Synthesis Options Summary                        *
+	=========================================================================
+	---- Source Parameters
+	Input File Name                    : "ALU8b.prj"
+	Ignore Synthesis Constraint File   : NO
 
-	*Custom Compiler Version S-2021.09
-	*Tue Feb 22 20:44:28 2022
+	---- Target Parameters
+	Output File Name                   : "ALU8b"
+	Output Format                      : NGC
+	Target Device                      : xc7a100t-3-csg324
 
-	.global gnd!
-	********************************************************************************
-	* Library          : lib1
-	* Cell             : 3T1D_DRAM
-	* View             : schematic
-	* View Search List : hspice hspiceD schematic spice veriloga
-	* View Stop List   : hspice hspiceD
-	********************************************************************************
-	.subckt _3t1d_dram dramop rclk vc wrclk bit_line
-	xm4 dramop net32 gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-	xm3 gnd! vc gnd! gnd! n105 w=3.5u l=0.03u nf=1 m=1
-	xm5 net32 rclk gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
-	xm12 bit_line wrclk vc vc n105 w=3.5u l=30n nf=1 m=1
-	xm0 gnd! vc gnd! gnd! n105 w=0.6u l=0.5u nf=1 m=1
-	xm7 dramop net32 net47 net47 p105 w=0.1u l=0.03u nf=1 m=1
-	xm6 net32 gnd! net47 net47 p105 w=0.1u l=0.03u nf=1 m=1
-	vs1 net47 gnd! dc=1.2
-	.ends _3t1d_dram
+	---- Source Options
+	Top Module Name                    : ALU8b
+	Automatic FSM Extraction           : YES
+	FSM Encoding Algorithm             : Auto
+	Safe Implementation                : Yes
+	FSM Style                          : LUT
+	RAM Extraction                     : Yes
+	RAM Style                          : Auto
+	ROM Extraction                     : Yes
+	Shift Register Extraction          : YES
+	ROM Style                          : Auto
+	Resource Sharing                   : YES
+	Asynchronous To Synchronous        : NO
+	Shift Register Minimum Size        : 2
+	Use DSP Block                      : Auto
+	Automatic Register Balancing       : No
 
-	********************************************************************************
-	* Library          : lib1
-	* Cell             : 3T1D_DRAM_tb
-	* View             : schematic
-	* View Search List : hspice hspiceD schematic spice veriloga
-	* View Stop List   : hspice hspiceD
-	********************************************************************************
-	xi1 op rclk vc wrclk bit_line _3t1d_dram
-	vdatain bit_line gnd! dc=0 pulse ( 0 1.2 0 100p 100p 10n 20n )
-	vr_clk rclk gnd! dc=0 pulse ( 0 1.2 6n 100p 100p 2n 10n )
-	vwr_clk wrclk gnd! dc=0 pulse ( 0 1.2 0.2n 100p 100p 2n 10n )
+	---- Target Options
+	LUT Combining                      : Auto
+	Reduce Control Sets                : Auto
+	Add IO Buffers                     : YES
+	Global Maximum Fanout              : 100000
+	Add Generic Clock Buffer(BUFG)     : 32
+	Register Duplication               : YES
+	Optimize Instantiated Primitives   : NO
+	Use Clock Enable                   : Auto
+	Use Synchronous Set                : Auto
+	Use Synchronous Reset              : Auto
+	Pack IO Registers into IOBs        : Auto
+	Equivalent register Removal        : YES
 
-	.tran '1n' '50n' name=tran
+	---- General Options
+	Optimization Goal                  : Speed
+	Optimization Effort                : 1
+	Power Reduction                    : NO
+	Keep Hierarchy                     : No
+	Netlist Hierarchy                  : As_Optimized
+	RTL Output                         : Yes
+	Global Optimization                : AllClockNets
+	Read Cores                         : YES
+	Write Timing Constraints           : NO
+	Cross Clock Analysis               : NO
+	Hierarchy Separator                : /
+	Bus Delimiter                      : <>
+	Case Specifier                     : Maintain
+	Slice Utilization Ratio            : 100
+	BRAM Utilization Ratio             : 100
+	DSP48 Utilization Ratio            : 100
+	Auto BRAM Packing                  : NO
+	Slice Utilization Ratio Delta      : 5
 
-	.option primesim_remove_probe_prefix = 0
-	.probe v(*) i(*) level=1
-	.probe tran v(op) v(rclk) v(vc) v(wrclk) v(bit_line)
+## Design Report
 
-	.temp 25
+	=========================================================================
+	*                            Design Summary                             *
+	=========================================================================
 
-	.option primesim_output=wdf
+	Top Level Output File Name         : ALU8b.ngc
 
-	.option parhier = LOCAL
+	Primitive and Black Box Usage:
+	------------------------------
+	# BELS                             : 50
+	#      GND                         : 1
+	#      LUT3                        : 16
+	#      LUT5                        : 8
+	#      LUT6                        : 10
+	#      MUXCY                       : 7
+	#      XORCY                       : 8
+	# IO Buffers                       : 32
+	#      IBUF                        : 22
+	#      OBUF                        : 10
 
-	.end
+	Device utilization summary:
+	---------------------------
 
-# Observations & Conclusion:
-Thus, the design and analysis of the 3T1D Capacitorless DRAM using 28nm CMOS has been successfully carried out on the Synopsys Custom Compiler with the following observations:</br>
+	Selected Device : 7a100tcsg324-3 
 
-• The storage of data in this type of DRAM design is made possible via the use of a gated diode as an alternative to capacitor based DRAM cells.</br>
-• Because the 3T-1D DRAM is a dynamic memory the value at the storage node[Vc] leaks away with time but because of its resistance to process variation, this 3T1D DRAM does not slow down as its size is scaled down helping it to be used at low feature sizes.</br>
-• The 3T1D design eliminates existing memory drawabacks and scalability issues associated with the 4T and 3T1C based DRAM Designs.</br>
+
+	Slice Logic Utilization: 
+	 Number of Slice LUTs:                   34  out of  63400     0%  
+	    Number used as Logic:                34  out of  63400     0%  
+
+	Slice Logic Distribution: 
+	 Number of LUT Flip Flop pairs used:     34
+	   Number with an unused Flip Flop:      34  out of     34   100%  
+	   Number with an unused LUT:             0  out of     34     0%  
+	   Number of fully used LUT-FF pairs:     0  out of     34     0%  
+	   Number of unique control sets:         0
+
+	IO Utilization: 
+	 Number of IOs:                          32
+	 Number of bonded IOBs:                  32  out of    210    15%  
+
+	Specific Feature Utilization:
+
+	---------------------------
+	Partition Resource Summary:
+	---------------------------
+
+	  No Partitions were found in this design.
+
+	---------------------------
+	=========================================================================
+	
+	
+# Conclusion:
+Thus, the design and analysis of the 8-bit Arithmetic and Logical Unit was successfully done and it was observed that the ALU was performing all the 18 different operations as required.</br>
 
 # Author:
 • Ayush Gupta, B.Tech(ECE), SRM Institute of Science and Technology, Kattankulattur, Chennai-603203.
