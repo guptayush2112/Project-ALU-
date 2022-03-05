@@ -4,7 +4,7 @@
 -- 
 -- Create Date:    12:07:53 05/01/2021 
 -- Design Name: 
--- Module Name:    alustrucs - Behavioral 
+-- Module Name:    ALU8bs - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,15 +29,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity alustruc is
+entity ALU8b is
 port (x,y : in std_logic_vector(7 downto 0);
 	  cb : in std_logic_vector(5 downto 0);
 	  zr : out std_logic;
 	  ng : out std_logic;
 	  O : out std_logic_vector(7 downto 0));
-end alustruc;
+end ALU8b;
 
-architecture Structural of alustruc is
+architecture Structural of ALU8b is
 
 component not8 is
 port (i : in std_logic_vector(7 downto 0);
