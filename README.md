@@ -110,7 +110,7 @@ For Structural Design, kindly refer to: <a href='https://github.com/guptayush211
 
 After completing the coding and writing the testbench as well, the ALU testbench for Structural model was now simulated using the Xilinx ISim as shown in the two images below.
 
-For the Testbench Design, X and Y were taken initially as 0000100010 and 00001010 
+For the Testbench Design, X and Y were taken initially as 00010010 and 00001010 
 </p>
 
 <p align="center">
