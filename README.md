@@ -126,7 +126,7 @@ Moreover, the zr bit goes to high [1]to indicate that the output we've got from 
   Fig. 3 (b): Testbench of 8-bit ALU [Contd till 900ns]
 </p>
 
-Note: Since the port declarations inside the ALU entity of both Structural and Behavioral model are same and the testbench stimuli given to both is same meaning that the testbench of behavioral modelling style is similar to that of the structural modelling, hence the testbench simulation of only one, that is, the structural model is shown here.
+Note: Since the port declarations inside the ALU entity of both Structural and Behavioral model are same and the testbench stimulus given to both is same, meaning that the testbench of behavioral modelling style is similar to that of the structural modelling, hence the simulation of only one, that is, the structural model is shown here.
 
 # Synthesis and Analysis
 
