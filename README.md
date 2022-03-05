@@ -113,7 +113,7 @@ After completing the coding and writing the testbench as well, the ALU testbench
 For the Testbench Design, X and Y were taken initially as 00010010 and 00001010.
 </p>
 For the different values of control bits we can see how the output labelled as o is changing.
-Moreover, the zr bit goes to high [1] whenever the ALU output goes to 0 and ng goes to high [1] to indicate that the output is a signed binary number. Thus, with the functionality of the ALU as per the table in Fig 2(b) was hence verified.
+Moreover, the zr bit goes to high [1]to indicate that the output we've got from the ALU is zero and ng goes to high [1] to indicate that the output is a signed binary number. Thus, with the functionality of the ALU as per the table in Fig 2(b) was hence verified.
 </p>
 
 <p align="center">
