@@ -39,7 +39,7 @@ ARCHITECTURE behavior OF alustruc_tb IS
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT alustruc
+    COMPONENT ALU8b
     PORT(
          x : IN  std_logic_vector(7 downto 0);
          y : IN  std_logic_vector(7 downto 0);
@@ -49,7 +49,6 @@ ARCHITECTURE behavior OF alustruc_tb IS
          O : OUT  std_logic_vector(7 downto 0)
         );
     END COMPONENT;
-    
 
    --Inputs
    signal x : std_logic_vector(7 downto 0) := (others => '0');
@@ -60,21 +59,19 @@ ARCHITECTURE behavior OF alustruc_tb IS
    signal zr : std_logic;
    signal ng : std_logic;
    signal O : std_logic_vector(7 downto 0);
-   -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
 
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: alustruc PORT MAP (
+   uut: ALU8b PORT MAP (
           x => x,
           y => y,
           cb => cb,
           zr => zr,
           ng => ng,
-          O => O
-        ); 
+          O => O);
 
    -- Stimulus process
    stim_proc: process
