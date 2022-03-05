@@ -110,9 +110,10 @@ For Structural Design, kindly refer to: <a href='https://github.com/guptayush211
 
 After completing the coding and writing the testbench as well, the ALU testbench for Structural model was now simulated using the Xilinx ISim as shown in the two images below.
 
-For the Testbench Design, X and Y were taken initially as 00010010 and 00001010 
+For the Testbench Design, X and Y were taken initially as 00010010 and 00001010.
+</p>
 For the different values of control bits we can see how the output labelled as o is changing.
-The zr bit goes to high [1] whenever the ALU output goes to 0 and ng goes to high [1] to indicate that the output is a signed binary number.
+Moreover, the zr bit goes to high [1] whenever the ALU output goes to 0 and ng goes to high [1] to indicate that the output is a signed binary number. Thus, with the functionality of the ALU as per the table in Fig 2(b) was hence verified.
 </p>
 
 <p align="center">
