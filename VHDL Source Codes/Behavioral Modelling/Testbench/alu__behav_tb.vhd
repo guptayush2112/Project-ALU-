@@ -60,10 +60,7 @@ ARCHITECTURE behavior OF alu_tst IS
    signal zr : std_logic;
    signal ng : std_logic;
    signal O : std_logic_vector(0 to 8);
-   -- No clocks detected in port list. Replace <clock> below with 
-   -- appropriate port name 
- 
---   constant <clock>_period : time := 10 ns;
+
 
 BEGIN
  
@@ -97,8 +94,8 @@ BEGIN
         cb <= "000010";  wait for 50ns;  -- x+y
         cb <= "010011";  wait for 50ns;  -- x-y
         cb <= "000111";  wait for 50ns;  -- y-x
-		  cb <= "000000";  wait for 50ns;  -- x&y [bitwise and]
-		  cb <= "010101";  wait for 50ns;  -- x|y [bitwise or]
+	cb <= "000000";  wait for 50ns;  -- x&y [bitwise and]
+	cb <= "010101";  wait for 50ns;  -- x|y [bitwise or]
       wait;
    end process;
 END;
