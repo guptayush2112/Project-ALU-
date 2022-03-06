@@ -158,48 +158,52 @@ Initially, after the function implementation of the design was verified through 
 	=========================================================================
 	---- Source Parameters
 	Input File Name                    : "ALU8b.prj"
+	Input Format                       : mixed
 	Ignore Synthesis Constraint File   : NO
 
 	---- Target Parameters
 	Output File Name                   : "ALU8b"
 	Output Format                      : NGC
-	Target Device                      : xc7a100t-3-csg324
+	Target Device                      : xc3s100e-5-vq100
 
 	---- Source Options
 	Top Module Name                    : ALU8b
 	Automatic FSM Extraction           : YES
 	FSM Encoding Algorithm             : Auto
-	Safe Implementation                : Yes
+	Safe Implementation                : No
 	FSM Style                          : LUT
 	RAM Extraction                     : Yes
 	RAM Style                          : Auto
 	ROM Extraction                     : Yes
+	Mux Style                          : Auto
+	Decoder Extraction                 : YES
+	Priority Encoder Extraction        : Yes
 	Shift Register Extraction          : YES
+	Logical Shifter Extraction         : YES
+	XOR Collapsing                     : YES
 	ROM Style                          : Auto
+	Mux Extraction                     : Yes
 	Resource Sharing                   : YES
 	Asynchronous To Synchronous        : NO
-	Shift Register Minimum Size        : 2
-	Use DSP Block                      : Auto
+	Multiplier Style                   : Auto
 	Automatic Register Balancing       : No
 
 	---- Target Options
-	LUT Combining                      : Auto
-	Reduce Control Sets                : Auto
 	Add IO Buffers                     : YES
 	Global Maximum Fanout              : 100000
-	Add Generic Clock Buffer(BUFG)     : 32
+	Add Generic Clock Buffer(BUFG)     : 24
 	Register Duplication               : YES
+	Slice Packing                      : YES
 	Optimize Instantiated Primitives   : NO
-	Use Clock Enable                   : Auto
-	Use Synchronous Set                : Auto
-	Use Synchronous Reset              : Auto
+	Use Clock Enable                   : Yes
+	Use Synchronous Set                : Yes
+	Use Synchronous Reset              : Yes
 	Pack IO Registers into IOBs        : Auto
 	Equivalent register Removal        : YES
 
 	---- General Options
 	Optimization Goal                  : Speed
 	Optimization Effort                : 1
-	Power Reduction                    : NO
 	Keep Hierarchy                     : No
 	Netlist Hierarchy                  : As_Optimized
 	RTL Output                         : Yes
@@ -212,61 +216,130 @@ Initially, after the function implementation of the design was verified through 
 	Case Specifier                     : Maintain
 	Slice Utilization Ratio            : 100
 	BRAM Utilization Ratio             : 100
-	DSP48 Utilization Ratio            : 100
+	Verilog 2001                       : YES
 	Auto BRAM Packing                  : NO
 	Slice Utilization Ratio Delta      : 5
+
+	=========================================================================
 
 ## Design Summary:
 
 	=========================================================================
-	*                            Design Summary                             *
+	*                            Design Summary                               *
 	=========================================================================
+	Final Results
+	RTL Top Level Output File Name     : ALU8b.ngr
+	Top Level Output File Name         : ALU8b
+	Output Format                      : NGC
+	Optimization Goal                  : Speed
+	Keep Hierarchy                     : No
 
-	Top Level Output File Name         : ALU8b.ngc
+	Design Statistics
+	# IOs                              : 32
 
-	Primitive and Black Box Usage:
-	------------------------------
-	# BELS                             : 50
+	Cell Usage :
+	# BELS                             : 66
 	#      GND                         : 1
-	#      LUT3                        : 16
-	#      LUT5                        : 8
-	#      LUT6                        : 10
+	#      LUT3                        : 24
+	#      LUT4                        : 18
 	#      MUXCY                       : 7
+	#      MUXF5                       : 8
 	#      XORCY                       : 8
 	# IO Buffers                       : 32
 	#      IBUF                        : 22
 	#      OBUF                        : 10
+	=========================================================================
 
 	Device utilization summary:
 	---------------------------
 
-	Selected Device : 7a100tcsg324-3 
+	Selected Device : 3s100evq100-5 
 
-	Slice Logic Utilization: 
-	 Number of Slice LUTs:                   34  out of  63400     0%  
-	    Number used as Logic:                34  out of  63400     0%  
-
-	Slice Logic Distribution: 
-	 Number of LUT Flip Flop pairs used:     34
-	   Number with an unused Flip Flop:      34  out of     34   100%  
-	   Number with an unused LUT:             0  out of     34     0%  
-	   Number of fully used LUT-FF pairs:     0  out of     34     0%  
-	   Number of unique control sets:         0
-
-	IO Utilization: 
+	 Number of Slices:                       22  out of    960     2%  
+	 Number of 4 input LUTs:                 42  out of   1920     2%  
 	 Number of IOs:                          32
-	 Number of bonded IOBs:                  32  out of    210    15%  
+	 Number of bonded IOBs:                  32  out of     66    48%  
 
-	Specific Feature Utilization:
-	
 	---------------------------
 	Partition Resource Summary:
 	---------------------------
-	  No Partitions were found in this design.
+	No Partitions were found in this design.
 	---------------------------
+
+## Timing Report
+
+	Timing Detail:
+	--------------
+	All values displayed in nanoseconds (ns)
+
+	=========================================================================
+	Timing constraint: Default path analysis
+	  Total number of paths / destination ports: 1450 / 10
+	-------------------------------------------------------------------------
+	Delay:               12.181ns (Levels of Logic = 15)
+	  Source:            cb<5> (PAD)
+	  Destination:       zr (PAD)
+
+	  Data Path: cb<5> to zr
+					Gate     Net
+	    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+	    ----------------------------------------  ------------
+	     IBUF:I->O            15   1.106   1.016  cb_5_IBUF (cb_5_IBUF)
+	     LUT3:I0->O            2   0.612   0.532  muxxc/o<0>1 (Xf<0>)
+	     LUT4:I0->O            1   0.612   0.000  addnxy/Madd_t_Madd_lut<0> (addnxy/Madd_t_Madd_lut<0>)
+	     MUXCY:S->O            1   0.404   0.000  addnxy/Madd_t_Madd_cy<0> (addnxy/Madd_t_Madd_cy<0>)
+	     MUXCY:CI->O           1   0.051   0.000  addnxy/Madd_t_Madd_cy<1> (addnxy/Madd_t_Madd_cy<1>)
+	     MUXCY:CI->O           1   0.051   0.000  addnxy/Madd_t_Madd_cy<2> (addnxy/Madd_t_Madd_cy<2>)
+	     MUXCY:CI->O           1   0.051   0.000  addnxy/Madd_t_Madd_cy<3> (addnxy/Madd_t_Madd_cy<3>)
+	     MUXCY:CI->O           1   0.051   0.000  addnxy/Madd_t_Madd_cy<4> (addnxy/Madd_t_Madd_cy<4>)
+	     MUXCY:CI->O           1   0.051   0.000  addnxy/Madd_t_Madd_cy<5> (addnxy/Madd_t_Madd_cy<5>)
+	     XORCY:CI->O           2   0.699   0.410  addnxy/Madd_t_Madd_xor<6> (nxaddy<6>)
+	     LUT4:I2->O            1   0.612   0.000  muxno/o<6>11 (muxno/o<6>1)
+	     MUXF5:I1->O           2   0.278   0.532  muxno/o<6>1_f5 (O_6_OBUF)
+	     LUT4:I0->O            1   0.612   0.360  zrout/op_SW0 (N18)
+	     LUT4:I3->O            1   0.612   0.357  zrout/op (zr_OBUF)
+	     OBUF:I->O                 3.169          zr_OBUF (zr)
+	    ----------------------------------------
+	    Total                     12.181ns (8.973ns logic, 3.207ns route)
+					       (73.7% logic, 26.3% route)
+	
+	    Maximum combinational path delay: 12.181ns
 	=========================================================================
 	
-	
+## XPower Analyzer Report
+	2.  Power Summary
+	2.1.  On-Chip Power Summary
+	-----------------------------------------------------------------------------
+	|                           On-Chip Power Summary                           |
+	-----------------------------------------------------------------------------
+	|        On-Chip        | Power (mW) |  Used  | Available | Utilization (%) |
+	-----------------------------------------------------------------------------
+	| Clocks                |       0.00 |      0 |    ---    |       ---       |
+	| Logic                 |       0.00 |     42 |      1920 |               2 |
+	| Signals               |       0.00 |     59 |    ---    |       ---       |
+	| IOs                   |       0.00 |     32 |        66 |              48 |
+	| Static Power          |      33.59 |        |           |                 |
+	| Total                 |      33.59 |        |           |                 |
+	-----------------------------------------------------------------------------
+
+	2.2.  Thermal Summary
+	------------------------------
+	|      Thermal Summary       |
+	------------------------------
+	| Effective TJA (C/W) | 49.0 |
+	| Max Ambient (C)     | 83.4 |
+	| Junction Temp (C)   | 26.6 |
+	------------------------------
+
+	2.3.  Power Supply Summary
+	---------------------------------------------------------
+	|                 Power Supply Summary                  |
+	---------------------------------------------------------
+	|                      | Total | Dynamic | Static Power |
+	---------------------------------------------------------
+	| Supply Power (mW)    | 33.59 | 0.00    | 33.59        |
+	---------------------------------------------------------
+
 # Conclusion:
 Thus, the design and analysis of the 8-bit Arithmetic Logic Unit was successfully done and it was observed that the ALU was performing all the 18 different operations as required.</br>
 
