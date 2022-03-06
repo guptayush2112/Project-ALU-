@@ -9,6 +9,7 @@ This repository showcases the RTL [Register Transfer Level] coding of an 8-bit A
  * [Tools Used](#Tools-Used)
  * [RTL Coding and Simulation](#RTL-Coding-and-Simulation)
  * [Synthesis and Analysis](#Synthesis-and-Analysis)
+ * [Final Synthesis Report](#Final-Synthesis-Report)
  * [Conclusion](#Conclusion)
  * [Author](#Author)
  * [Acknowledgements](#Acknowledgements)
@@ -149,7 +150,7 @@ Initially, after the function implementation of the design was verified through 
   <img src="Synthesis/Imgs/Detailed_TechView.jpg"></br>
 </p>
 
-# Synthesis Report:
+# Final Synthesis Report
 
 ## Synthesis Summary:
 
@@ -266,7 +267,7 @@ Initially, after the function implementation of the design was verified through 
 	No Partitions were found in this design.
 	---------------------------
 
-## Timing Report
+## Timing Report:
 
 	Timing Detail:
 	--------------
@@ -306,7 +307,7 @@ Initially, after the function implementation of the design was verified through 
 	    Maximum combinational path delay: 12.181ns
 	=========================================================================
 	
-## XPower Analyzer Report
+## XPower Analyzer Report:
 	2.  Power Summary
 	2.1.  On-Chip Power Summary
 	-----------------------------------------------------------------------------
