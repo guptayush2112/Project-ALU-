@@ -32,7 +32,7 @@ Now, before we can actually write the RTL code for our ALU, it is important to f
 
 # Design Methodology and Explanation
 
-## ALU Design
+## Logic Diagram
 <p align="center">
 <img src="Logisim/Img/ALUcirc.jpg"></br>
   Fig 1: Reference Logic Diagram
